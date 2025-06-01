@@ -1,0 +1,122 @@
+{
+    "josefin sans": {
+        "100_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_100_italic_35f9a7e0a01179dbbb0fbf59b9b7cf55",
+        "200_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_200_italic_1e17356e9f022a4478305696589a3811",
+        "300_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_300_italic_7db2fd333674155f67f042f82019a6e0",
+        "italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_italic_c89c9e165eb981003cc050528e9874c3",
+        "500_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_500_italic_bd773b06171c1ef5e974a89aef4cac0c",
+        "600_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_600_italic_e53ca3c2c7ddcdbadad845bafbfaaa0b",
+        "bold_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_bold_italic_fb4f952763b9411096e230f5c6e3e6da",
+        "100": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_100_914caaf33f34c0e62ec2d1118486e232",
+        "200": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_200_b1e729856650d49ae3bc859ef65fd10d",
+        "300": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_300_f5aac7455869e5576c0156ebf717393b",
+        "normal": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_normal_fd422f6c098f78d2a8d7416082832196",
+        "500": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_500_320a4c9dabd477033e8b2eeb52b66eea",
+        "600": "josefin_sans_600_65fa52c19fa36fcffb8a116d7d119ec7",
+        "bold": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/josefin_sans_bold_1cdeccc232cd0ffbfdebe8bd77df2079"
+    },
+    "lato": {
+        "100_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lato_100_italic_44e4c60a7625d0726917c5586600eef3",
+        "300_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lato_300_italic_5d458a0bea2edc814cad9956eabe8265",
+        "italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lato_italic_b7fa5abebbe1668203ae32668ec9cd2e",
+        "bold_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lato_bold_italic_6fe97904fa17d2ccdc33faba12fa878c",
+        "900_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lato_900_italic_9d745788e8b9254eca55b7b9d6642bc8",
+        "100": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lato_100_70daffc5a0e459436079609c81930e2f",
+        "300": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lato_300_bfdde39714afa6c7c8803648317f8517",
+        "normal": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lato_normal_51116b245f08d5e5cdb537d25637e400",
+        "bold": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lato_bold_39c477866ca5e9b58b0b56a69b4bac5a",
+        "900": "lato_900_f2c6fe94dc8549ffc66e6fb626318e87"
+    },
+    "lora": {
+        "italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lora_italic_eb867052ad5e90ef245b07a22dbdaab7",
+        "500_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lora_500_italic_880e732b62889e364b2dea3286478ceb",
+        "600_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lora_600_italic_e45f96e05b3a851c971fd9c64f37e9c7",
+        "bold_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lora_bold_italic_50ae0c4d08c1c7ecd4d6c412a076fd3d",
+        "normal": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lora_normal_f169b723c8279706927397f5dae1bc64",
+        "500": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lora_500_c2eb810e6611bbbef3e17b681d51fee5",
+        "600": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/lora_600_934f2432a02abdced32c20f9c31d4175",
+        "bold": "lora_bold_732fdfe4e8f78a0340d9ecf46d664ed0"
+    },
+    "merriweather": {
+        "300_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/merriweather_300_italic_cd5c06752ba8900d30041912a185bf0c",
+        "italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/merriweather_italic_cb2dd0228f1feb77ffdacb70eb8a3335",
+        "bold_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/merriweather_bold_italic_d205a6c184ac0783846d4ce558136d74",
+        "900_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/merriweather_900_italic_ddb0618fc195ca05d919844e3a147583",
+        "300": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/merriweather_300_53d4ca1f86bff7eac931f8d1cc336665",
+        "normal": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/merriweather_normal_f48d8d14bf761fa27d7f4fa85936cb2b",
+        "bold": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/merriweather_bold_4c68737e59888e80def25674c46b5dfa",
+        "900": "merriweather_900_905263599be0411c2ca5732bf2cd1c47"
+    },
+    "playfair display": {
+        "italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_italic_6d5c2c18a1ac1688af54b8052072877c",
+        "500_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_500_italic_f2c89b99fa2063e4859719b8f52ea2d7",
+        "600_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_600_italic_44d36279a8edd400f3fdd680c1fcb905",
+        "bold_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_bold_italic_327419e58dd8257b329a576f313c851c",
+        "800_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_800_italic_d7f08f1b088a704e8c8751276bc55cad",
+        "900_italic": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_900_italic_a1d6bbc319ea8bf2b0eb1d6c433e602c",
+        "normal": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_normal_f926d2a9c906fad63d9213f072753ddb",
+        "500": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_500_0ac07657539920ca389fbeeb39e0e2ed",
+        "600": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_600_08dd37e859fdc61f12ab8c92af6b03de",
+        "bold": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_bold_86457bce79897df81c2468b52eb6a40c",
+        "800": "C:\\xampp\\htdocs\\php\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/playfair_display_800_abb27f83cb73ffc75c894da2691a482e",
+        "900": "playfair_display_900_a5fae8fc8ea54373214cd6511a3ae96d"
+    },
+    "mukta": {
+        "200": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/mukta_200_b59167b89d37d5e23ea88a7c392ce89e",
+        "300": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/mukta_300_e6c8f808e996e3d5d413850fc9bf7c39",
+        "normal": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/mukta_normal_dcd2e685bf85affe58570279b852b3c7",
+        "500": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/mukta_500_d7faebf10ae387c9974ffad7913e04c7",
+        "600": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/mukta_600_9a3f52a02228c58112488601f84c4fb4",
+        "bold": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/mukta_bold_fba4729b12d2333f4a89e7c4438e4b19",
+        "800": "mukta_800_d80c567b7dcc8c6d4a258c3525ee4852"
+    },
+    "noto sans": {
+        "100_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_100_italic_284a56b1eb7241b30edc94c66a688c38",
+        "200_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_200_italic_43d1320e78dc153d71c2064157d2055f",
+        "300_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_300_italic_aed2046597066212985ac081d094d4fa",
+        "italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_italic_e86afeb607b6a6a42fcda72913e587d0",
+        "500_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_500_italic_6de75e45d6b4a3873c70bad8a35e2a1b",
+        "600_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_600_italic_bb944e24e24a6763123233f04b9380e8",
+        "bold_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_bold_italic_e89255d436c91478cd2fb0a32bb6e52a",
+        "800_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_800_italic_f9f8b8a2bfb2095ed63062f14ed8f8c4",
+        "900_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_900_italic_3e389c35a48a4c356e766e018b7987a0",
+        "100": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_100_e83a8c6418478337a00806273acd767e",
+        "200": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_200_b46c12922bcb63bbc75f1516789f50fd",
+        "300": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_300_dade5483f138cae71159077d2a74811e",
+        "normal": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_normal_e1392f115d5e43f2ce0d82bb405a7921",
+        "500": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_500_6eb8ad0e602c3d4f485d5ae5ca048f52",
+        "600": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_600_3a45f9ab1d611c5d1865b46be1cb1214",
+        "bold": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_bold_4e0074f026ba13a97cfa934f603e38f1",
+        "800": "noto_sans_800_b462d563bcc2fc238e5ca5728b63f352",
+        "900": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/noto_sans_900_83030a929225f39990513ea8ccb91255"
+    },
+    "rubik": {
+        "300_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_300_italic_f3ec58ab97438b92000a72ac84211776",
+        "italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_italic_5c891f698c1caff0020be78c92f10a39",
+        "500_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_500_italic_57371c20d285fa8599a1ccca87395b92",
+        "600_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_600_italic_b053170af6c2126ab22c724493729d55",
+        "bold_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_bold_italic_07131578a76967b2b50479f169d6c6f7",
+        "800_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_800_italic_07f6a33730cb6b279af91d02cdacf858",
+        "900_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_900_italic_1fade589b58361748c80be61a39d9ad6",
+        "300": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_300_82a112de692d08b55c2b11842e5a67fc",
+        "normal": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_normal_b6ec54c36a02fb811d72194115ec42db",
+        "500": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_500_c5ab0af2d954c4140f26e728dad090b3",
+        "600": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_600_5d61a1f1e601158e12a385b1e07b6a27",
+        "bold": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_bold_98a50ec8225be60b521143fc843a3c06",
+        "800": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/rubik_800_20bdf6febb16cee4a3859d48f5d42785",
+        "900": "rubik_900_4dfecf395fe303ada46235ba5f342713"
+    },
+    "ubuntu": {
+        "300_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/ubuntu_300_italic_b8fe9e8d47652aef8a27f80ec07e6de9",
+        "italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/ubuntu_italic_a0618d1762a0d0e8737a12a06551ac1d",
+        "500_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/ubuntu_500_italic_cd00fb9f9bb8f502217a9e38f1a2bd1c",
+        "bold_italic": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/ubuntu_bold_italic_ba188971224e3e78d6ee81a5d3d98e31",
+        "300": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/ubuntu_300_78caa070e669b23c12005b68678fc64d",
+        "normal": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/ubuntu_normal_a9b4465f75f1e035e352908784fee311",
+        "500": "C:\\xampp\\htdocs\\php\\IFS\\user_panel\\membership\\PDF\\vendor\\dompdf\\dompdf\/lib\/fonts\/ubuntu_500_77b379fb022b48e8a5f4b688af8ca205",
+        "bold": "ubuntu_bold_01f1f5adaa8ee473febf98094d81e93b"
+    },
+    "glyphicons halflings": {
+        "normal": "glyphicons_halflings_normal_448cf7c5a9f8cf5b480d96c9606cc001"
+    }
+}
