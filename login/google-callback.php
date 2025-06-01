@@ -1,17 +1,6 @@
 <?php
 include("C:/xampp/htdocs/php/CashFlow/config.php");
-require_once 'vendor/autoload.php';
 require HTTP_PATH."login/Oauth.php";
-
-// Initialize Google Client
-$client = new Google\Client();
-
-// Set your credentials
-$client->setClientId($clientId);
-$client->setClientSecret($clientSecret);
-$client->setRedirectUri('http://localhost/php/CashFlow/login/google-callback.php');
-$client->addScope('email');
-$client->addScope('profile');
 
 try {
     if (!isset($_GET['code'])) {

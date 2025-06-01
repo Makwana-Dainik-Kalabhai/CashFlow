@@ -2,18 +2,6 @@
 <?php
 require_once 'vendor/autoload.php';
 require HTTP_PATH . "login/Oauth.php";
-
-
-// Initialize the Google Client
-$client = new Google\Client();
-$client->setClientId($clientId);
-$client->setClientSecret($clientSecret);
-$client->setRedirectUri('http://localhost/php/CashFlow/login/google-callback.php');
-$client->addScope('email');
-$client->addScope('profile');
-
-// Generate the authentication URL
-$authUrl = $client->createAuthUrl();
 ?>
 
 
