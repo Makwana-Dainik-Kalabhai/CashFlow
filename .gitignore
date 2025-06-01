@@ -1,2 +1,2 @@
-/login/vendor
+/login/vendor/.gitignore
 /add-exp.html
