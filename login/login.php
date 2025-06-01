@@ -1,11 +1,13 @@
 <!-- //! Google Login -->
 <?php
 require_once 'vendor/autoload.php';
+require HTTP_PATH . "login/Oauth.php";
+
 
 // Initialize the Google Client
 $client = new Google\Client();
-$client->setClientId('789780569480-uaet6cqqc0e98k49416v13nvj2g7m1jr.apps.googleusercontent.com');
-$client->setClientSecret('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');
+$client->setClientId($clientId);
+$client->setClientSecret($clientSecret);
 $client->setRedirectUri('http://localhost/php/CashFlow/login/google-callback.php');
 $client->addScope('email');
 $client->addScope('profile');
@@ -235,7 +237,7 @@ $authUrl = $client->createAuthUrl();
             <p>Log in to your Expense Tracker account</p>
         </div>
 
-        <form action="<?php echo HTTP_PATH."login/verify.php"; ?>" method="post" id="loginForm">
+        <form action="<?php echo HTTP_PATH . "login/verify.php"; ?>" method="post" id="loginForm">
             <div class="form-group">
                 <label for="email">Email or Username</label>
                 <div class="input-with-icon">
