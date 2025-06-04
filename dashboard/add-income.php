@@ -23,7 +23,7 @@
 
 
 <?php if (isset($_POST["addIncome"])) {
-    $in = $conn->prepare("INSERT INTO `income` VALUES(0, '" . $_SESSION["email"] . "', " . $_POST["income"] . ", '" . $_SESSION["monthYear"] . "')");
+    $in = $conn->prepare("INSERT INTO `income` VALUES(0, '" . $_COOKIE["email"] . "', " . $_POST["income"] . ", '" . $_SESSION["monthYear"] . "')");
     $in->execute();
 
     $_SESSION["success"] = "Income inserted successfully";
@@ -33,7 +33,7 @@
 
 <?php if (isset($_SESSION["add-income"])) { ?>
     <!-- Add Income Modal -->
-    <div class="income-modal">
+    <div class="income-modal in-exp-modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Income ( <?php echo $_SESSION["add-income"]; ?> )</h3>

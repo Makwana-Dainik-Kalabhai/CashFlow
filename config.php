@@ -1,14 +1,16 @@
 <?php
 session_start();
 
+if (isset($_COOKIE["otp"])) setcookie("otp", "", time() - 10, "/");
+if (isset($_COOKIE["setPass"])) setcookie("setPass", "", time() - 10, "/");
+
 define("HTTP_PATH", "http://localhost/php/CashFlow/");
 define("DRIVE_PATH", "C:/xampp/htdocs/php/CashFlow/");
 
 $conn = new PDO("mysql:host=localhost;dbname=CashFlow", "root", "");
 ?>
 
-<link rel="shortcut icon" href="<?php echo HTTP_PATH."logo.ico"; ?>" type="image/x-icon">
-
+<link rel="shortcut icon" href="<?php echo HTTP_PATH."logo.ico"; ?>" type="image/x-icon" />
 
 <!-- //! Link Tags -->
 <!-- Font Awesome -->

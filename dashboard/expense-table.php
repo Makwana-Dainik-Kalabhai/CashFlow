@@ -28,9 +28,9 @@
         margin-bottom: 1.5rem;
     }
 
-    .table-title {
-        font-size: 1.25rem;
-        font-weight: 600;
+    .expense-table-container .filter {
+        display: flex;
+        align-items: center;
     }
 
     .table-actions {
@@ -52,8 +52,6 @@
         background: #79C963;
         border-bottom: 1px solid #e2e8f0;
     }
-
-    /* #f8fafc */
 
     td {
         font-size: 0.9rem;
@@ -179,36 +177,50 @@
         <div class="header">
             <h1>All Transactions</h1>
             <div class="user-profile">
-                <span><?php echo $_SESSION["name"]; ?></span>
-                <h2 class="user-avatar"><?php echo $_SESSION["name"][0]; ?></h2>
+                <span><?php echo $_COOKIE["name"]; ?></span>
+                <h2 class="user-avatar"><?php echo $_COOKIE["name"][0]; ?></h2>
             </div>
         </div>
 
 
         <div class="expense-table-container grow-animation" style="animation-delay: 0.9s">
             <div class="table-header">
-                <h3 class="table-title">Fetch for all Years</h3>
+                <div class="filter">
+                    Select Year:&emsp;
+                    <select class="btn btn-primary year-select">
+                        <option style="color: black;" value="all">All</option>
+                        <?php
+                        $years = $conn->prepare("SELECT * FROM `expenses` WHERE email='" . $_COOKIE["email"] . "' GROUP BY YEAR(date) ORDER BY expenses.date");
+                        $years->execute();
+                        $years = $years->fetchAll();
+
+                        foreach ($years as $y) { ?>
+                            <option style="color: black;" value="<?php echo date("Y", strtotime($y["date"])); ?>"><?php echo date("Y", strtotime($y["date"])); ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+
                 <div class="table-actions">
                     <button class="btn btn-primary" id="addExpenseBtn">
                         <i class="fas fa-plus"></i> Add Expense
                     </button>
-                    <a href="<?php echo HTTP_PATH . "dashboard/print/print.php"; ?>" class="btn btn-outline"><i class="fa-solid fa-print"></i> Print</a>
+                    <a href="<?php echo HTTP_PATH . "dashboard/print/print.php?year=all"; ?>" class="btn btn-outline print-link"><i class="fa-solid fa-print"></i> Print</a>
                 </div>
             </div>
             <div class="table-responsive">
 
                 <?php
                 for ($j = 2023; $j <= date("Y"); $j++) {
-                    $sel = $conn->prepare("SELECT * FROM `expenses` JOIN `income` ON income.incomeId=expenses.incomeId WHERE YEAR(expenses.date)=$j AND expenses.email='" . $_SESSION["email"] . "' ORDER BY expenses.date");
+                    $sel = $conn->prepare("SELECT * FROM `expenses` JOIN `income` ON income.incomeId=expenses.incomeId WHERE YEAR(expenses.date)=$j AND expenses.email='" . $_COOKIE["email"] . "' ORDER BY expenses.date");
                     $sel->execute();
                     $sel = $sel->fetchAll();
 
                     if (isset($sel[0]) && date("Y", strtotime($sel[0]["date"])) == $j) {
                 ?>
 
-                        <h3 style="text-align: center;color: maroon;padding-bottom: 1.5rem;">Year ( <?php echo $j; ?> )</h3>
+                        <h3 class="<?php echo $j; ?>" style="text-align: center;color: maroon;padding-bottom: 1.5rem;">Year ( <?php echo $j; ?> )</h3>
 
-                        <table id="expenseTable" data-year="<?php echo date("Y", strtotime($r["date"])); ?>">
+                        <table id="expenseTable" class="<?php echo $j; ?>" data-year="<?php echo $j; ?>">
                             <thead>
                                 <tr>
                                     <th>Month</th>
@@ -301,6 +313,22 @@
 
 <script>
     $(document).ready(function() {
+
+        //! Filter Year wised
+        $(".year-select").change(function() {
+            if ($(this).val() != "all") {
+                $("table").hide();
+                $("table").siblings("h3").hide();
+                $("table").siblings(`.${$(this).val()}`).show();
+                $(`table.${$(this).val()}`).show();
+            }
+            else {
+                $("table").show();
+                $("table").siblings("h3").show();
+            }
+
+            $(".print-link").attr("href", `http://localhost/php/CashFlow/dashboard/print/print.php?year=${$(this).val()}`);
+        });
 
         $(".edit-btn").click(function() {
             let textData = {

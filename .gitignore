@@ -1,3 +1,2 @@
-.gitignore
 login/vendor/
 login/Oauth.php

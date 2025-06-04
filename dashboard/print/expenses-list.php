@@ -1,9 +1,12 @@
 <?php
 include("C:/xampp/htdocs/php/CashFlow/config.php");
+if (isset($_GET["year"])) $_SESSION["year"] = $_GET["year"];
 
-$sel = $conn->prepare("SELECT * FROM `expenses` WHERE `email`='" . $_SESSION["email"] . "' ORDER BY date");
-$sel->execute();
-$sel = $sel->fetchAll();
+
+$firstYear = $conn->prepare("SELECT * FROM `expenses` WHERE `email`='" . $_COOKIE["email"] . "' ORDER BY YEAR(date)");
+$firstYear->execute();
+$firstYear = $firstYear->fetchAll();
+$firstYear = date("Y", strtotime($firstYear[0]["date"]));
 
 $html = "";
 
@@ -27,7 +30,7 @@ $html .= "<!DOCTYPE html>
     }
 
     h3 {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         text-align: center;
         color: maroon;
         padding-bottom: 1rem;
@@ -42,7 +45,7 @@ $html .= "<!DOCTYPE html>
     th {
         text-align: left;
         padding: 0.75rem 1rem;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         font-weight: 500;
         color: var(--secondary);
         background: #f8fafc;
@@ -50,8 +53,8 @@ $html .= "<!DOCTYPE html>
     }
 
     td {
-        font-size: 0.7rem;
-        padding: 1rem 0.5rem;
+        font-size: 0.65rem;
+        padding: 0.6rem 1rem;
         border-bottom: 1px solid #e2e8f0;
         line-height: 1;
     }
@@ -74,8 +77,12 @@ $html .= "<!DOCTYPE html>
 <body>
     <img src='" . HTTP_PATH . "logo.png' class='logo' />";
 
-for ($j = 2023; $j <= date("Y"); $j++) {
-    $sel = $conn->prepare("SELECT * FROM `expenses` WHERE YEAR(date)=$j AND email='" . $_SESSION["email"] . "' ORDER BY date");
+$start = ((isset($_SESSION["year"]) && $_SESSION["year"] != "all") ? $_SESSION["year"] : $firstYear);
+$end = ((isset($_SESSION["year"]) && $_SESSION["year"] != "all") ? $_SESSION["year"] : date("Y"));
+
+for ($j = $start; $j <= $end; $j++) {
+
+    $sel = $conn->prepare("SELECT * FROM `expenses` JOIN `income` ON income.incomeId=expenses.incomeId WHERE YEAR(expenses.date)=$j AND expenses.email='" . $_COOKIE["email"] . "' ORDER BY expenses.date");
     $sel->execute();
     $sel = $sel->fetchAll();
 
@@ -99,10 +106,14 @@ for ($j = 2023; $j <= date("Y"); $j++) {
         $prevMonth = "";
         $currMonth = "";
         $nextMonth = "";
-        $total = 0;
+        $monExp = 0;
+        $yearExp = 0;
+        $yearIn = 0;
+        $color = "white";
 
         foreach ($sel as $i => $r) {
-            $total += $r["expense"];
+            $monExp += $r["expense"];
+            $yearExp += $r["expense"];
 
             $currMonth = date("M", strtotime($r["date"]));
 
@@ -110,7 +121,7 @@ for ($j = 2023; $j <= date("Y"); $j++) {
                 $nextMonth = date("M", strtotime($sel[$i + 1]["date"]));
             }
 
-            $html .= "<tr>
+            $html .= "<tr style='background-color: $color;'>
                 <td style='" . ((($currMonth != $nextMonth) || ($i + 1 == sizeof($sel))) ? "border-bottom: 1px solid #e2e8f0;" : "border-bottom: none;") . "font-size: 0.75rem;color: maroon;'>";
 
             if ($currMonth != $prevMonth) {
@@ -127,12 +138,25 @@ for ($j = 2023; $j <= date("Y"); $j++) {
                 <td>&#8377;" . $r["expense"] . "</td>
             </tr>";
 
+            if ($currMonth != $nextMonth || $i + 1 == sizeof(($sel))) {
+                $html .= "<tr style='background-color: $color;'>
+                                            <td></td>
+                                            <td colspan='4' style='color: maroon;text-align:center;'>[ " . date("M Y", strtotime($r["date"])) . " ]&ensp;Subtotal ( Income - ₹" . $r["income"] . " )</td>
+                                            <td colspan='2' style='color: maroon;'>₹$monExp</td>
+                                        </tr>";
+
+                $monExp = 0;
+                $yearIn += $r["income"];
+                $color = ($color == "white") ? "#e6ffe6" : "white";
+            }
+
+
             if ($i + 1 == sizeof($sel)) {
                 $html .= "<tr>
-                    <td colspan='5' class='total'>Total of Year ( $j )</td>
-                    <td colspan='2'>₹$total</td>
-                </tr>";
-                $total = 0;
+                                            <td colspan='5' class='total'>[ $j ]&ensp;Total of Year ( Income - ₹$yearIn )</td>
+                                            <td colspan='2'>₹$yearExp</td>
+                                        </tr>";
+                $yearExp = 0;
             }
 
             $prevMonth = date("M", strtotime($r["date"]));

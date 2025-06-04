@@ -21,7 +21,7 @@
         pointer-events: all;
     }
 
-    .modal-content {
+    .in-exp-modal .modal-content {
         margin: 2rem 0;
         background: white;
         border-radius: 12px;
@@ -33,23 +33,23 @@
         transition: var(--transition);
     }
 
-    .modal.active .modal-content {
+    .in-exp-modal .modal.active .modal-content {
         transform: translateY(0);
     }
 
-    .modal-header {
+    .in-exp-modal .modal-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 1.5rem;
     }
 
-    .modal-title {
+    .in-exp-modal .modal-title {
         font-size: 1.25rem;
         font-weight: 600;
     }
 
-    .close-btn {
+    .in-exp-modal .close-btn {
         background: transparent;
         border: none;
         font-size: 1.5rem;
@@ -57,17 +57,17 @@
         color: var(--secondary);
     }
 
-    .form-group {
+    .in-exp-modal .form-group {
         margin-bottom: 1.25rem;
     }
 
-    .form-label {
+    .in-exp-modal .form-label {
         display: block;
         margin-bottom: 0.5rem;
         font-weight: 500;
     }
 
-    .form-control {
+    .in-exp-modal .form-control {
         width: 100%;
         padding: 0.75rem;
         border-radius: 8px;
@@ -76,13 +76,13 @@
         transition: var(--transition);
     }
 
-    .form-control:focus {
+    .in-exp-modal .form-control:focus {
         outline: none;
         border-color: #a777e3;
         box-shadow: 0 0 0 3px rgba(167, 119, 227, 0.2);
     }
 
-    .form-actions {
+    .in-exp-modal .form-actions {
         display: flex;
         justify-content: flex-end;
         gap: 1rem;
@@ -120,7 +120,7 @@ unset($_SESSION["success"]); ?>
 
 
 <!-- Add Expense Modal -->
-<div class="expense-modal" id="expenseModal">
+<div class="expense-modal in-exp-modal" id="expenseModal">
     <div class="modal-content">
         <div class="modal-header">
             <h3 class="modal-title">Add New Expense</h3>

@@ -1,6 +1,6 @@
 <?php
 include("C:/xampp/htdocs/php/CashFlow/config.php");
-require HTTP_PATH."login/Oauth.php";
+require DRIVE_PATH . "login/Oauth.php";
 
 try {
     if (!isset($_GET['code'])) {
@@ -20,9 +20,8 @@ try {
     $sel = $sel->fetchAll();
 
     if (isset($sel[0]["email"])) {
-        $_SESSION["name"] = $userinfo["name"];
-        $_SESSION["email"] = $userinfo["email"];
-
+        setcookie("name", $userinfo["name"], time() + (10 * 24 * 60 * 60), "/");
+        setcookie("email", $userinfo["email"], time() + (10 * 24 * 60 * 60), "/");
 
         $_SESSION["success"] = "Login Successfully";
         header("Location: " . HTTP_PATH . "dashboard/dashboard.php");

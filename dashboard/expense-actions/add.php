@@ -2,7 +2,7 @@
 
 $mon = date("m Y", strtotime($_POST["date"]));
 
-$expense = $conn->prepare("SELECT * FROM `expenses` WHERE `monthYear`='$mon' AND `email`='" . $_SESSION["email"] . "'");
+$expense = $conn->prepare("SELECT * FROM `expenses` WHERE `monthYear`='$mon' AND `email`='" . $_COOKIE["email"] . "'");
 $expense->execute();
 $expense = $expense->fetchAll();
 $totalExp = 0;
@@ -15,7 +15,7 @@ if (isset($expense[0])) {
 $totalExp += $_POST["expense"];
 
 
-$income = $conn->prepare("SELECT * FROM `income` WHERE `monthYear`='$mon' AND `email`='" . $_SESSION["email"] . "'");
+$income = $conn->prepare("SELECT * FROM `income` WHERE `monthYear`='$mon' AND `email`='" . $_COOKIE["email"] . "'");
 $income->execute();
 $income = $income->fetchAll();
 
@@ -29,7 +29,7 @@ else if ($totalExp > $income[0]["income"]) {
 }
 //
 else {
-    $in = $conn->prepare("INSERT INTO `expenses` VALUES(0, " . $income[0]["incomeId"] . ", '" . $_SESSION["email"] . "', '" . $_SESSION["name"] . "', '" . $_POST["type"] . "', " . $_POST["expense"] . ", '" . date("Y-m-d", strtotime($_POST["date"])) . " 00:00:00', " . date("Y", strtotime($_POST["date"])) . ", '" . date("m Y", strtotime($_POST["date"])) . "', '" . $_POST["description"] . "')");
+    $in = $conn->prepare("INSERT INTO `expenses` VALUES(0, " . $income[0]["incomeId"] . ", '" . $_COOKIE["email"] . "', '" . $_COOKIE["name"] . "', '" . $_POST["type"] . "', " . $_POST["expense"] . ", '" . date("Y-m-d", strtotime($_POST["date"])) . " 00:00:00', " . date("Y", strtotime($_POST["date"])) . ", '" . date("m Y", strtotime($_POST["date"])) . "', '" . $_POST["description"] . "')");
 
     $in->execute();
 

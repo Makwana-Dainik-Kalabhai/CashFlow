@@ -131,7 +131,7 @@
         let save = 0;
 
         <?php
-        $sel = $conn->prepare("SELECT * FROM `expenses` WHERE `monthYear`='" . date("m Y") . "' AND `email`='" . $_SESSION["email"] . "'");
+        $sel = $conn->prepare("SELECT * FROM `expenses` WHERE `monthYear`='" . date("m Y") . "' AND `email`='" . $_COOKIE["email"] . "'");
         $sel->execute();
         $sel = $sel->fetchAll();
         $total = [0, 0, 0, 0, 0, 0, 0];

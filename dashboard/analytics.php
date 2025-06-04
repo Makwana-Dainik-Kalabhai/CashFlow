@@ -140,10 +140,14 @@
         <div class="header">
             <h1>Analysis of Income / Expenses</h1>
             <div class="user-profile">
-                <span><?php echo $_SESSION["name"]; ?></span>
-                <h2 class="user-avatar"><?php echo $_SESSION["name"][0]; ?></h2>
+                <span><?php echo $_COOKIE["name"]; ?></span>
+                <h2 class="user-avatar"><?php echo $_COOKIE["name"][0]; ?></h2>
             </div>
         </div>
+
+
+        <!-- Overview Cards -->
+        <?php include(DRIVE_PATH . "dashboard/overview-cards.php"); ?>
 
 
         <!-- Charts Section -->
@@ -190,10 +194,6 @@
             <div class="chart-container grow-animation" style="animation-delay: 0.8s">
                 <div class="chart-header">
                     <h3 class="chart-title">Daily Spending</h3>
-                    <div class="time-period-toggle" role="tablist">
-                        <button class="time-period-btn active" role="tab" aria-selected="true">Month</button>
-                        <button class="time-period-btn" role="tab" aria-selected="false">Week</button>
-                    </div>
                 </div>
                 <div class="chart">
                     <?php include(DRIVE_PATH . "dashboard/charts/daily-spend.php"); ?>

@@ -1,21 +1,29 @@
 <?php
 include("C:/xampp/htdocs/php/CashFlow/config.php");
 
-$sel = $conn->prepare("SELECT * FROM `users` WHERE `email`='" . $_POST["email"] . "' AND `password`='" . $_POST["password"] . "'");
+$sel = $conn->prepare("SELECT * FROM `users` WHERE `name`='" . $_POST["email"] . "' OR `email`='" . $_POST["email"] . "'");
 $sel->execute();
 $sel = $sel->fetchAll();
 
-if (isset($sel[0]["email"])) {
-    $_SESSION["name"] = $sel[0]["name"];
-    $_SESSION["email"] = $sel[0]["email"];
+if (isset($sel[0])) {
 
-    header("Location: " . HTTP_PATH . "dashboard/dashboard.php");
+    foreach ($sel as $r) {
+        if ($r["password"] == $_POST["password"]) {
+            setcookie("name", $r["name"], time() + (10 * 24 * 60 * 60), "/");
+            setcookie("email", $r["email"], time() + (10 * 24 * 60 * 60), "/");
+
+            header("Location: " . HTTP_PATH . "dashboard/dashboard.php");
+            return;
+        }
+    }
 }
 //
 else {
-    $_SESSION["error"] = "Invalid Email ID or Password";
-    
-    if (isset($_SERVER["HTTP_REFERER"])) {
-        header("Location: " . $_SERVER["HTTP_REFERER"]);
-    }
+    $in = $conn->prepare("INSERT INTO `users` VALUES('" . $_POST["name"] . "', '" . $_POST["email"] . "', '" . $_POST["password"] . "')");
+    $in->execute();
+
+    setcookie("name", $_POST["name"], time() + (10 * 24 * 60 * 60), "/");
+    setcookie("email", $_POST["email"], time() + (10 * 24 * 60 * 60), "/");
+
+    header("Location: " . HTTP_PATH . "dashboard/dashboard.php");
 }

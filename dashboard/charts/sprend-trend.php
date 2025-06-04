@@ -9,7 +9,7 @@
         };
 
         <?php
-        $sel = $conn->prepare("SELECT * FROM `expenses` JOIN `income` ON expenses.incomeId=income.incomeId WHERE MONTH(expenses.date)=" . date("m") . " AND expenses.email='" . $_SESSION["email"] . "'");
+        $sel = $conn->prepare("SELECT * FROM `expenses` JOIN `income` ON expenses.incomeId=income.incomeId WHERE MONTH(expenses.date)=" . date("m") . " AND expenses.email='" . $_COOKIE["email"] . "'");
         $sel->execute();
         $sel = $sel->fetchAll();
         $expenses = [0, 0, 0, 0, 0];

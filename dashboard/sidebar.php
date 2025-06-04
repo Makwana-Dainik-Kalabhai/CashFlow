@@ -262,10 +262,8 @@
     <nav class="sidebar-menu">
         <a href="<?php echo HTTP_PATH . "dashboard/dashboard.php?active=dashboard"; ?>" class="menu-item <?php if (isset($_GET["active"]) && $_GET["active"] == "dashboard") echo "active"; ?>"><i class="fas fa-home"></i> Dashboard</a>
         <a href="<?php echo HTTP_PATH . "dashboard/analytics.php?active=analytics"; ?>" class="menu-item <?php if (isset($_GET["active"]) && $_GET["active"] == "analytics") echo "active"; ?>"><i class="fas fa-chart-pie"></i> Analytics</a>
-        <a href="<?php echo HTTP_PATH . "dashboard/expense-table.php?active=expenses"; ?>" class="menu-item <?php if (isset($_GET["active"]) && $_GET["active"] == "expenses") echo "active"; ?>"><i class="fas fa-exchange-alt"></i> Transactions</a>
-        <a href="#" class="menu-item"><i class="fas fa-bullseye"></i> Goals</a>
-        <a href="#" class="menu-item"><i class="fas fa-cog"></i> Settings</a>
-        <a href="#" class="menu-item"><i class="fas fa-question-circle"></i> Help</a>
+        <a href="<?php echo HTTP_PATH . "dashboard/expense-table.php?active=expenses"; ?>" class="menu-item <?php if (isset($_GET["active"]) && $_GET["active"] == "expenses") echo "active"; ?>"><i class="fa-solid fa-money-bill-wave"></i> Transactions</a>
+        <a href="#" class="menu-item login-btn"><i class="fa-solid fa-shuffle"></i> Switch User</a>
         <a href="<?php echo HTTP_PATH . "dashboard/logout.php"; ?>" class="menu-item"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
     </nav>
 </aside>
@@ -279,3 +277,6 @@
 
 <?php include(DRIVE_PATH . "dashboard/add-expense.php"); ?>
 <?php include(DRIVE_PATH . "dashboard/add-income.php"); ?>
+
+<!-- Login Modal -->
+<?php include(DRIVE_PATH . "login/login.php"); ?>

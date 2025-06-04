@@ -3,7 +3,7 @@
 if (isset($_POST["edit"])) {
     $mon = date("m Y", strtotime($_POST["date"]));
 
-    $expense = $conn->prepare("SELECT * FROM `expenses` WHERE `expenseId`!=".$_POST["expenseId"]." AND `monthYear`='$mon' AND `email`='" . $_SESSION["email"] . "'");
+    $expense = $conn->prepare("SELECT * FROM `expenses` WHERE `expenseId`!=".$_POST["expenseId"]." AND `monthYear`='$mon' AND `email`='" . $_COOKIE["email"] . "'");
     $expense->execute();
     $expense = $expense->fetchAll();
     $totalExp = 0;
@@ -16,7 +16,7 @@ if (isset($_POST["edit"])) {
     $totalExp += $_POST["expense"];
 
 
-    $income = $conn->prepare("SELECT * FROM `income` WHERE `monthYear`='$mon' AND `email`='" . $_SESSION["email"] . "'");
+    $income = $conn->prepare("SELECT * FROM `income` WHERE `monthYear`='$mon' AND `email`='" . $_COOKIE["email"] . "'");
     $income->execute();
     $income = $income->fetchAll();
 

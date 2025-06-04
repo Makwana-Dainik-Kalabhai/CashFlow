@@ -85,7 +85,7 @@
         };
 
         <?php
-        $sel = $conn->prepare("SELECT * FROM `expenses` JOIN `income` ON expenses.incomeId=income.incomeId WHERE expenses.year=" . date("Y") . " AND expenses.email='" . $_SESSION["email"] . "'");
+        $sel = $conn->prepare("SELECT * FROM `expenses` JOIN `income` ON expenses.incomeId=income.incomeId WHERE expenses.year=" . date("Y") . " AND expenses.email='" . $_COOKIE["email"] . "'");
         $sel->execute();
         $sel = $sel->fetchAll();
         $income = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -101,6 +101,7 @@
         <?php } ?>
 
         // Initialize chart
+
 
         function initChart(data) {
             let incomeExpenseChart;
@@ -240,6 +241,3 @@
         });
     });
 </script>
-</body>
-
-</html>

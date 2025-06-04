@@ -1,7 +1,7 @@
 <!-- //! Google Login -->
 <?php
 require_once 'vendor/autoload.php';
-require HTTP_PATH . "login/Oauth.php";
+require DRIVE_PATH . "login/Oauth.php";
 ?>
 
 
@@ -227,10 +227,18 @@ require HTTP_PATH . "login/Oauth.php";
 
         <form action="<?php echo HTTP_PATH . "login/verify.php"; ?>" method="post" id="loginForm">
             <div class="form-group">
-                <label for="email">Email or Username</label>
+                <label for="email">Username</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" class="form-control" placeholder="Enter Username" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
                 <div class="input-with-icon">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" id="email" name="email" class="form-control" placeholder="Enter your email or username" required>
+                    <input type="email" name="email" class="form-control" placeholder="Enter Email ID" required>
                 </div>
             </div>
 
@@ -238,7 +246,7 @@ require HTTP_PATH . "login/Oauth.php";
                 <label for="password">Password</label>
                 <div class="input-with-icon">
                     <i class="fas fa-lock"></i>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+                    <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
                     <button type="button" class="password-toggle" id="togglePassword">
                         <i class="fas fa-eye"></i>
                     </button>
@@ -246,7 +254,7 @@ require HTTP_PATH . "login/Oauth.php";
             </div>
 
             <div class="options">
-                <a href="#" class="forgot-password">Forgot password?</a>
+                <a href="<?php echo HTTP_PATH . "forgot-pass/forgot-pass.php"; ?>" class="forgot-password">Forgot password?</a>
             </div>
 
             <button type="submit" class="btn btn-primary">Log In</button>
@@ -266,10 +274,17 @@ require HTTP_PATH . "login/Oauth.php";
 
 <script>
     $(document).ready(function() {
+        $(".password-toggle").click(function() {
+            $("input[name='password']").attr("type", ($("input[name='password']").attr("type") == "text") ? "password" : "text");
+            $(".password-toggle i").toggleClass("fa-eye");
+            $(".password-toggle i").toggleClass("fa-eye-slash");
+        });
+
+
         $(".login-btn").click(function() {
             $("#loginModal").addClass("active");
         });
-        $("#closeModal").click(function() {
+        $(".close-btn").click(function() {
             $("#loginModal").removeClass("active");
         });
     });
