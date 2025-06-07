@@ -1,6 +1,20 @@
 <!-- //! Google Login -->
 <?php
 include(DRIVE_PATH . "login/Oauth.php");
+require_once 'vendor/autoload.php';
+
+// Initialize Google Client
+$client = new Google\Client();
+
+// Set your credentials
+$client->setClientId("789780569480-uaet6cqqc0e98k49416v13nvj2g7m1jr.apps.googleusercontent.com");
+$client->setClientSecret("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");
+$client->setRedirectUri('http://localhost/php/CashFlow/login/google-callback.php');
+$client->addScope('email');
+$client->addScope('profile');
+
+// Generate the authentication URL
+$authUrl = $client->createAuthUrl();
 ?>
 
 
