@@ -132,18 +132,12 @@
 <body>
     <!-- Sidebar -->
     <?php include(DRIVE_PATH . "dashboard/sidebar.php"); ?>
-
+    
     <!-- Main Content -->
     <main class="main-content">
         <div id="particles-js"></div>
-
-        <div class="header">
-            <h1>Analysis of Income / Expenses</h1>
-            <div class="user-profile">
-                <span><?php echo $_COOKIE["name"]; ?></span>
-                <h2 class="user-avatar"><?php echo $_COOKIE["name"][0]; ?></h2>
-            </div>
-        </div>
+        
+        <?php include(DRIVE_PATH . "dashboard/header.php"); ?>
 
 
         <!-- Overview Cards -->

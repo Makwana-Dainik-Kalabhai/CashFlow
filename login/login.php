@@ -1,7 +1,6 @@
 <!-- //! Google Login -->
 <?php
-require_once 'vendor/autoload.php';
-require DRIVE_PATH . "login/Oauth.php";
+include(DRIVE_PATH . "login/Oauth.php");
 ?>
 
 
@@ -225,17 +224,17 @@ require DRIVE_PATH . "login/Oauth.php";
             <p>Log in to your Expense Tracker account</p>
         </div>
 
-        <form action="<?php echo HTTP_PATH . "login/verify.php"; ?>" method="post" id="loginForm">
+        <form action="<?php echo "http://localhost/php/CashFlow/login/verify.php"; ?>" method="post" id="loginForm">
             <div class="form-group">
-                <label for="email">Username</label>
+                <label for="email">Username <sub style="color: red;">If you not already registered</sub></label>
                 <div class="input-with-icon">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="name" class="form-control" placeholder="Enter Username" required>
+                    <input type="text" name="name" class="form-control" placeholder="Enter Username" />
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email <b style="color: red;">*</b></label>
                 <div class="input-with-icon">
                     <i class="fas fa-envelope"></i>
                     <input type="email" name="email" class="form-control" placeholder="Enter Email ID" required>
@@ -243,7 +242,7 @@ require DRIVE_PATH . "login/Oauth.php";
             </div>
 
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">Password <b style="color: red;">*</b></label>
                 <div class="input-with-icon">
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
@@ -254,7 +253,7 @@ require DRIVE_PATH . "login/Oauth.php";
             </div>
 
             <div class="options">
-                <a href="<?php echo HTTP_PATH . "forgot-pass/forgot-pass.php"; ?>" class="forgot-password">Forgot password?</a>
+                <a href="<?php echo "http://localhost/php/CashFlow/forgot-pass/forgot-pass.php"; ?>" class="forgot-password">Forgot password?</a>
             </div>
 
             <button type="submit" class="btn btn-primary">Log In</button>

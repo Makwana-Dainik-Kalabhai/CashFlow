@@ -8,7 +8,7 @@ $prevMon = $currMon + 1;
 
 
 //! For Previous Month
-$sel = $conn->prepare("SELECT * FROM `income` JOIN `expenses` ON income.monthYear=expenses.monthYear WHERE expenses.monthYear='" . date("m Y", strtotime("-$prevMon months")) . "' AND expenses.email='" . $_COOKIE["email"] . "'");
+$sel = $conn->prepare("SELECT * FROM `income` JOIN `expenses` ON income.monthYear=expenses.monthYear WHERE income.monthYear='" . date("m Y", strtotime("-$prevMon months")) . "' AND income.email='" . $_COOKIE["email"] . "'");
 $sel->execute();
 $sel = $sel->fetchAll();
 
@@ -31,7 +31,7 @@ if (isset($sel[0])) {
 
 
 //! For Current Month
-$sel = $conn->prepare("SELECT * FROM `income` JOIN `expenses` ON income.monthYear=expenses.monthYear WHERE expenses.monthYear='" . date("m Y", strtotime("-$currMon months")) . "' AND expenses.email='" . $_COOKIE["email"] . "'");
+$sel = $conn->prepare("SELECT * FROM `income` JOIN `expenses` ON income.monthYear=expenses.monthYear WHERE income.monthYear='" . date("m Y", strtotime("-$currMon months")) . "' AND income.email='" . $_COOKIE["email"] . "'");
 $sel->execute();
 $sel = $sel->fetchAll();
 

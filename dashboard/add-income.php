@@ -47,19 +47,25 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="button" class="btn btn-outline" id="cancelExpense">Cancel</button>
+                    <button type="button" class="btn btn-outline cancel-btn" id="cancelExpense">Cancel</button>
                     <button type="submit" class="btn btn-primary" name="addIncome">Save Income</button>
                 </div>
             </form>
         </div>
     </div>
 <?php $_SESSION["monthYear"] = $_SESSION["add-income"];
-}
-unset($_SESSION["add-income"]); ?>
+    unset($_SESSION["add-income"]);
+} ?>
+
+
 
 <script>
     $(document).ready(function() {
         $(".close-btn").click(function() {
+            $(".income-modal .modal-content").delay(500).css("transform", "translateY(200%)");
+            $(".income-modal").fadeOut(400);
+        });
+        $(".cancel-btn").click(function() {
             $(".income-modal .modal-content").delay(500).css("transform", "translateY(200%)");
             $(".income-modal").fadeOut(400);
         });

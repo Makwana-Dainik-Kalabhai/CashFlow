@@ -494,7 +494,7 @@ $conn = new PDO("mysql:host=localhost;dbname=CashFlow", "root", "");
                 $(".submit-btn").addClass("loading");
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost/php/CashFlow/forgot-pass/submit.php",
+                    url: "http://localhost/php/CashFlow/email/forgot-pass.php",
                     data: data,
                     success: function(res) {
                         if (res == "true") $(".alert").text(trueAlert);

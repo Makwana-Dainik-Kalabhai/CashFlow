@@ -14,29 +14,41 @@ try {
     $oauth = new Google\Service\Oauth2($client);
     $userinfo = $oauth->userinfo->get();
 
+    if (isset($_SESSION["error"])) unset($_SESSION["error"]);   
 
     $sel = $conn->prepare("SELECT * FROM `users` WHERE `email`='" . $userinfo["email"] . "'");
     $sel->execute();
     $sel = $sel->fetchAll();
 
-    if (isset($sel[0]["email"])) {
+    if (isset($sel[0])) {
         setcookie("name", $userinfo["name"], time() + (10 * 24 * 60 * 60), "/");
         setcookie("email", $userinfo["email"], time() + (10 * 24 * 60 * 60), "/");
 
-        $_SESSION["success"] = "Login Successfully";
         header("Location: " . HTTP_PATH . "dashboard/dashboard.php");
         return;
     }
 
-    $in = $conn->prepare("INSERT INTO `users` VALUES('" . $userinfo["name"] . "', '" . $userinfo["email"] . "', '')");
-    $in->execute();
-
     if (empty($token)) {
         throw new Exception('Empty token received from Google');
     }
+
+    $in = $conn->prepare("INSERT INTO `users` VALUES('" . $userinfo["name"] . "', '" . $userinfo["email"] . "', '', 0)");
+    $in->execute();
+
+    include(DRIVE_PATH . "email/welcome.php");
+    welcomeMsg($userinfo["name"], $userinfo["email"]);
+
+    setcookie("name", $userinfo["name"], time() + (10 * 24 * 60 * 60), "/");
+    setcookie("email", $userinfo["email"], time() + (10 * 24 * 60 * 60), "/");
+
     header("Location: " . HTTP_PATH . "dashboard/dashboard.php");
-} catch (Exception $e) {
+}
+//
+catch (Exception $e) {
     error_log('Google Auth Error: ' . $e->getMessage());
-    header('Location: login.php?error=auth_failed');
+
+    $_SESSION["error"] = "Something went wrong, Please! Try again later";
+
+    header("Location: " . DRIVE_PATH . "index.php");
     exit();
 }

@@ -1,4 +1,7 @@
-<?php include("C:/xampp/htdocs/php/CashFlow/config.php"); ?>
+<?php
+include("C:/xampp/htdocs/php/CashFlow/config.php");
+include(DRIVE_PATH . "email/month-expense.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -172,40 +175,34 @@
 <body>
     <!-- Sidebar -->
     <?php include(DRIVE_PATH . "dashboard/sidebar.php"); ?>
-    
+
     <!-- Main Content -->
     <main class="main-content">
         <div id="particles-js"></div>
-        
-        <div class="header">
-            <h1>Expense Dashboard</h1>
-            <div class="user-profile">
-                <span><?php echo $_COOKIE["name"]; ?></span>
-                <h2 class="user-avatar"><?php echo $_COOKIE["name"][0]; ?></h2>
-            </div>
-        </div>
-        
+
+        <?php include(DRIVE_PATH . "dashboard/header.php"); ?>
+
         <div class="header-filter" style="padding: 1rem 0;">
             <?php
             $year = date("Y");
             //! Provide Months for filter
-            $months = $conn->prepare("SELECT * FROM `expenses` WHERE `year`=$year AND `email`='".$_COOKIE["email"]."' GROUP BY MONTH(date) ORDER BY MONTH(date)");
+            $months = $conn->prepare("SELECT * FROM `expenses` WHERE `year`=$year AND `email`='" . $_COOKIE["email"] . "' GROUP BY MONTH(date) ORDER BY MONTH(date)");
             $months->execute();
             $months = $months->fetchAll();
-            
+
             foreach ($months as $i => $m) { ?>
                 <button class="<?php if (date("m") == date("m", strtotime($m["date"]))) echo "active"; ?>" value="<?php echo date("m", strtotime($m["date"])); ?>">
                     <h4><?php echo date("M", strtotime($m["date"])); ?></h4>
                 </button>
-                <?php } ?>
-            </div>
-            
-            
-            <div class="filter-dashboard">
-                
-                <!-- Overview Cards -->
-                <?php include(DRIVE_PATH . "dashboard/overview-cards.php"); ?>
-            
+            <?php } ?>
+        </div>
+
+
+        <div class="filter-dashboard">
+
+            <!-- Overview Cards -->
+            <?php include(DRIVE_PATH . "dashboard/overview-cards.php"); ?>
+
 
 
             <!-- Expense Table -->
@@ -237,7 +234,7 @@
                                 <tr>
                                     <td><?php echo $i + 1; ?>)</td>
                                     <td><?php echo $r["name"]; ?></td>
-                                    <td><span class="category-badge <?php echo $r["type"]; ?>"><?php echo $r["type"]; ?></span></td>
+                                    <td><span class="category-badge <?php echo $r["type"]; ?>"><?php echo strtoupper($r["type"][0]) . substr($r["type"], 1); ?></span></td>
                                     <td>&#8377;<?php echo $r["expense"]; ?></td>
                                     <td><?php echo date("M d, Y", strtotime($r["date"])); ?></td>
                                     <td><?php echo $r["description"]; ?></td>

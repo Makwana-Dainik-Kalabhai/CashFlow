@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 define("DRIVE_PATH", "C:/xampp/htdocs/php/CashFlow/");
 
 $conn = new PDO("mysql:host=localhost;dbname=CashFlow", "root", "");
@@ -12,9 +10,9 @@ use PHPMailer\PHPMailer\Exception;
 function send_email($name, $email)
 {
 
-    require DRIVE_PATH . "forgot-pass/phpmailer/src/Exception.php";
-    require DRIVE_PATH . "forgot-pass/phpmailer/src/PHPMailer.php";
-    require DRIVE_PATH . "forgot-pass/phpmailer/src/SMTP.php";
+    require DRIVE_PATH . "email/phpmailer/src/Exception.php";
+    require DRIVE_PATH . "email/phpmailer/src/PHPMailer.php";
+    require DRIVE_PATH . "email/phpmailer/src/SMTP.php";
 
     $mail = new PHPMailer(true);
 

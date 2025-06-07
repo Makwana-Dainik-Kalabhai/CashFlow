@@ -1,6 +1,8 @@
 <?php
 include("config.php");
-if(isset($_SESSION["email"]) || isset($_COOKIE["email"])) header("Location:".HTTP_PATH."dashboard/dashboard.php");
+if (isset($_SESSION["email"]) || isset($_COOKIE["email"])) header("Location:" . HTTP_PATH . "dashboard/dashboard.php");
+
+include(DRIVE_PATH . "email/month-expense.php");
 ?>
 
 <!DOCTYPE html>

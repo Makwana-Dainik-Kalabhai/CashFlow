@@ -262,9 +262,9 @@
                                         <!-- //! All Data -->
                                         <td style="display: none;" class="expense-id" data-text="<?php echo $r["expenseId"]; ?>"></td>
 
-                                        <td style="border-left: 1px solid #e2e8f0;" class="name" data-text="<?php echo $r["name"]; ?>"><?php echo $r["name"]; ?></td>
+                                        <td style="border-left: 1px solid #e2e8f0;" class="name" data-text="<?php echo $r["name"]; ?>"><?php echo $r["name"][0]; ?></td>
 
-                                        <td class="type" data-text="<?php echo $r["type"]; ?>"><span class="category-badge <?php echo $r["type"]; ?>"><?php echo $r["type"]; ?></span></td>
+                                        <td class="type" data-text="<?php echo strtoupper($r["type"][0]) . substr($r["type"], 1); ?>"><span class="category-badge <?php echo $r["type"]; ?>"><?php echo $r["type"]; ?></span></td>
 
                                         <td class="date" data-text="<?php echo date("Y-m-d", strtotime($r["date"])); ?>">
                                             <?php echo date("M d, Y", strtotime($r["date"])); ?>
@@ -321,8 +321,7 @@
                 $("table").siblings("h3").hide();
                 $("table").siblings(`.${$(this).val()}`).show();
                 $(`table.${$(this).val()}`).show();
-            }
-            else {
+            } else {
                 $("table").show();
                 $("table").siblings("h3").show();
             }

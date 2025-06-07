@@ -22,6 +22,9 @@ else {
     $in = $conn->prepare("INSERT INTO `users` VALUES('" . $_POST["name"] . "', '" . $_POST["email"] . "', '" . $_POST["password"] . "')");
     $in->execute();
 
+    include(DRIVE_PATH . "email/welcome.php");
+    welcomeMsg($_POST["name"], $_POST["email"]);
+
     setcookie("name", $_POST["name"], time() + (10 * 24 * 60 * 60), "/");
     setcookie("email", $_POST["email"], time() + (10 * 24 * 60 * 60), "/");
 
